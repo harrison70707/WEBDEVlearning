@@ -4,7 +4,20 @@ for (var i=0; i<document.querySelectorAll(".drum").length; i++){
         
         var buttonInnerHTML = this.innerHTML;
         
-        switch (buttonInnerHTML) {
+        makeSound(buttonInnerHTML);
+        
+        });
+
+}
+
+document.addEventListener("keypress", function(event) {
+    makeSound(event.key)
+});
+
+function makeSound(key){
+
+
+    switch (key) {
             case 'w':
                 var crash = new Audio('sounds/crash.mp3');
                     crash.play();
@@ -36,10 +49,7 @@ for (var i=0; i<document.querySelectorAll(".drum").length; i++){
             default: console.log(buttonInnerHTML);
         }
 
-
-    });
-}
-
+};
 
 
 
